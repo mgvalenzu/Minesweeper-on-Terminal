@@ -1,4 +1,4 @@
-# Author: Martin Gastelum-Valenzuela
+# Author: Martin Gabriel Gastelum-Valenzuela
 import random
 
 class Game():
@@ -14,7 +14,7 @@ class Game():
         return self.difficulty
 
     def set_difficulty(self):
-        """Prompt user to select game difficulty - Easy, Medium, or Hard"""
+        """Prompt user to select game difficulty - Easy, or Medium"""
         self.difficulty = input("Select difficulty:\nEASY -- MEDIUM\n").upper()
 
         return self.difficulty
@@ -358,7 +358,6 @@ if __name__ == "__main__":
     rand_mines = board.generate_rand_mines(board_data)    # create array of indices storing location of mines
     board.generate_board(board_data)    # board of M x N dimension
     board.place_elements(rand_mines)     # Place mines/numbers on board - randomized
-
     board.display_board()
     # board.display_under_board() # for testing
 
@@ -366,13 +365,10 @@ if __name__ == "__main__":
     user_soln = []
     curr_state = game.get_state()
 
-
     # game play loop
     while curr_state == "PLAY":
         game.prompt_input()
         user_tile = game.user_input()   # Obtain user chosen tile name
-
-
         contents = board.open_tile(user_tile)      # Uncover tile
         print('\n')
         board.display_board()            # Display updated board
@@ -382,18 +378,3 @@ if __name__ == "__main__":
     # Display solution/verification
     print("Answers: ",end = "")
     print(user_soln)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
