@@ -1,4 +1,4 @@
-# Author: Martin Gastelum-Valenzuela
+# Author: Martin Gabriel Gastelum-Valenzuela
 import random
 
 class Game():
